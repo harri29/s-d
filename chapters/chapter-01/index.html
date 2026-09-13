@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Đấu La 3 Đồng Nhân — Chap 1</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="masthead">
+    <h1>Đấu La 3 Đồng Nhân · Chap 1</h1>
+    <span>Người Nhìn Thấy Quá Nhiều · production storyboard</span>
+  </header>
+  <main id="chapter" class="chapter"></main>
+  <script src="chapter-data.js"></script>
+  <script>
+    const root = document.getElementById('chapter');
+    const esc = (s='') => s.replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]));
+    function renderPanel(p){
+      const cls = ['panel',p.type||''].join(' ');
+      const dialogue = p.text ? `<div class="bubble">${p.speaker?`<strong>${esc(p.speaker)}</strong>`:''}${esc(p.text)}</div>` : '';
+      const caption = p.caption ? `<div class="caption">${esc(p.caption)}</div>` : '';
+      return `<section class="${cls}"><div class="art">ART DIRECTION<br>${esc(p.art||'')}</div>${caption}${dialogue}</section>`;
+    }
+    function renderPage(pg){
+      const page = document.createElement('article');
+      page.className = `page ${pg.layout||''} ${pg.mood||''}`;
+      page.dataset.page = String(pg.page).padStart(2,'0');
+      page.innerHTML = pg.panels.map(renderPanel).join('');
+      root.appendChild(page);
+    }
+    CHAPTER_01.pages.forEach(renderPage);
+  </script>
+</body>
+</html>
