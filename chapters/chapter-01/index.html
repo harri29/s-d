@@ -3,30 +3,72 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#0b1020" />
+  <meta name="description" content="Đấu La 3 Đồng Nhân — Chap 1: Người Nhìn Thấy Quá Nhiều. Fan comic minh họa nguyên bản." />
   <title>Đấu La 3 Đồng Nhân — Chap 1</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header class="masthead">
     <h1>Đấu La 3 Đồng Nhân · Chap 1</h1>
-    <span>Người Nhìn Thấy Quá Nhiều · production storyboard</span>
+    <span>Người Nhìn Thấy Quá Nhiều · fan comic</span>
   </header>
-  <main id="chapter" class="chapter"></main>
+
+  <section class="cover">
+    <div class="cover-art" aria-hidden="true">
+      <svg viewBox="0 0 1200 1600" preserveAspectRatio="xMidYMid slice">
+        <defs>
+          <linearGradient id="cv" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#84c9df"/><stop offset=".45" stop-color="#56699f"/><stop offset="1" stop-color="#121b33"/></linearGradient>
+          <radialGradient id="cg"><stop stop-color="#fff7bc"/><stop offset=".35" stop-color="#f3c14d"/><stop offset="1" stop-color="#a45f2e"/></radialGradient>
+          <filter id="cglow"><feGaussianBlur stdDeviation="12" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+        </defs>
+        <rect width="1200" height="1600" fill="url(#cv)"/>
+        <circle cx="950" cy="190" r="120" fill="#eef8ff" opacity=".5"/>
+        <path d="M0 970 L0 620 L180 560 L310 620 L310 970Z M285 970 L285 470 L540 405 L790 505 L790 970Z M740 970 L740 600 L965 525 L1200 600 L1200 970Z" fill="#314c70" opacity=".8"/>
+        <path d="M80 1400 C260 1110 460 1140 590 900 S900 650 1140 810" fill="none" stroke="#d8f8ff" stroke-width="18" opacity=".55" filter="url(#cglow)"/>
+        <path d="M160 1120 C430 960 610 730 1020 760" fill="none" stroke="#f1cb5a" stroke-width="20" opacity=".35" filter="url(#cglow)"/>
+        <g transform="translate(360 900) scale(2.1)">
+          <path d="M-48 66 Q0 38 48 66 L68 190 L-65 190Z" fill="#223b67"/><path d="M-18 55 L0 90 L20 55" fill="#edf7ff"/><ellipse cx="0" cy="0" rx="42" ry="49" fill="#f3c8ac"/><path d="M-48 1 Q-51 -61 -3 -70 Q45 -68 50 -7 L34 -32 L24 -5 L8 -39 L-8 -8 L-21 -43 L-31 -8Z" fill="#11192c"/><ellipse cx="-14" cy="5" rx="7" ry="9" fill="#d9f6ff"/><ellipse cx="17" cy="5" rx="7" ry="9" fill="#d9f6ff"/><circle cx="-14" cy="5" r="13" fill="none" stroke="#e9fdff" stroke-width="2"/><circle cx="17" cy="5" r="13" fill="none" stroke="#e9fdff" stroke-width="2"/>
+        </g>
+        <g transform="translate(810 945) scale(1.85)">
+          <path d="M-48 66 Q0 38 48 66 L68 190 L-65 190Z" fill="#315a84"/><path d="M-18 55 L0 90 L20 55" fill="#eef6ff"/><ellipse cx="0" cy="0" rx="42" ry="49" fill="#f3c6a7"/><path d="M-48 1 Q-51 -61 -3 -70 Q45 -68 50 -7 L34 -32 L24 -5 L8 -39 L-8 -8 L-21 -43 L-31 -8Z" fill="#171923"/><ellipse cx="-14" cy="5" rx="7" ry="9" fill="#4c638f"/><ellipse cx="17" cy="5" rx="7" ry="9" fill="#4c638f"/>
+        </g>
+        <g opacity=".55" filter="url(#cglow)"><path d="M730 480 C820 280 1030 300 1120 440 C1040 430 980 500 940 565 C890 490 810 455 730 480Z" fill="none" stroke="#f5c34f" stroke-width="26"/></g>
+      </svg>
+    </div>
+    <div class="cover-copy">
+      <div class="kicker">ĐẤU LA 3 ĐỒNG NHÂN</div>
+      <h2>THIÊN NHÃN VẠN TƯỢNG</h2>
+      <p class="chapter-name">Chap 1 · Người Nhìn Thấy Quá Nhiều</p>
+      <p class="credit">Fan comic minh họa nguyên bản · nhân vật gốc thuộc tác giả/chủ sở hữu tương ứng</p>
+      <a class="read-btn" href="#chapter">Đọc chap 1 ↓</a>
+    </div>
+  </section>
+
+  <main id="chapter" class="chapter" aria-label="Chap 1"></main>
+
+  <footer class="footer">
+    <strong>Hết Chap 1</strong>
+    <span>Lâm Mặc đã nhìn thấy thứ không nên nhìn thấy.</span>
+  </footer>
+
   <script src="chapter-data.js"></script>
+  <script src="comic-art.js"></script>
   <script>
     const root = document.getElementById('chapter');
-    const esc = (s='') => s.replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]));
-    function renderPanel(p){
+    const esc = (s='') => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]));
+    function renderPanel(p,pageNo,index,mood){
       const cls = ['panel',p.type||''].join(' ');
       const dialogue = p.text ? `<div class="bubble">${p.speaker?`<strong>${esc(p.speaker)}</strong>`:''}${esc(p.text)}</div>` : '';
       const caption = p.caption ? `<div class="caption">${esc(p.caption)}</div>` : '';
-      return `<section class="${cls}"><div class="art">ART DIRECTION<br>${esc(p.art||'')}</div>${caption}${dialogue}</section>`;
+      const art = renderPanelIllustration(pageNo,index,mood,p.art||'');
+      return `<section class="${cls}" title="${esc(p.art||'')}">${art}${caption}${dialogue}</section>`;
     }
     function renderPage(pg){
       const page = document.createElement('article');
       page.className = `page ${pg.layout||''} ${pg.mood||''}`;
       page.dataset.page = String(pg.page).padStart(2,'0');
-      page.innerHTML = pg.panels.map(renderPanel).join('');
+      page.innerHTML = pg.panels.map((p,i)=>renderPanel(p,pg.page,i,pg.mood)).join('');
       root.appendChild(page);
     }
     CHAPTER_01.pages.forEach(renderPage);
