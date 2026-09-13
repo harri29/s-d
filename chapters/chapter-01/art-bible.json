@@ -1,0 +1,69 @@
+{
+  "project": "Douluo 3 Fan Comic - Chapter 1",
+  "chapterTitle": "Người Nhìn Thấy Quá Nhiều",
+  "visualDirection": {
+    "medium": "full-color Chinese fantasy manhua",
+    "line": "clean delicate line art, thin-to-medium contour, minimal heavy black",
+    "rendering": "refined cel shading with soft gradient transitions",
+    "palette": {
+      "ambient": ["#79B6D8", "#6D78B7", "#8A6AB8"],
+      "goldEnergy": "#F5C34F",
+      "silverEnergy": "#CFE8F4",
+      "night": ["#14233F", "#243B68"],
+      "skin": "natural warm-neutral, avoid plastic highlights"
+    },
+    "lighting": "soft atmospheric fill, strong rim-light during soul-power moments",
+    "effects": "ribbon-shaped energy trails, particles, thin bloom, speed streaks, no static aura halos",
+    "actionComposition": "diagonal panels, low camera, foreground crop, weapon/hand breaking frame",
+    "quietComposition": "close-ups, breathing room, gentle light, fewer effects"
+  },
+  "continuity": {
+    "global": [
+      "Keep each character's hair silhouette identical across all panels.",
+      "Keep academy outfit colors and trim unchanged within the chapter.",
+      "Use the same eye shape and iris design per character.",
+      "Do not add random armor, capes, jewelry, tattoos or fantasy accessories.",
+      "No chibi proportions except tiny comedic reaction panel if explicitly requested.",
+      "Avoid photorealistic skin and 3D rendering."
+    ],
+    "lamMac": {
+      "age": 10,
+      "build": "slim, compact, slightly shorter than Tang Wulin",
+      "hair": "black with cool blue sheen, layered fringe, restrained silhouette",
+      "eyesNormal": "dark grey",
+      "eyesActive": "silver iris with very thin concentric rings, subtle cyan glint",
+      "outfit": "simple Eastsea Academy student outfit, dark-blue and white, no special cape",
+      "bodyLanguage": "quiet, economical movements, observant, rarely exaggerated",
+      "soulEffect": "thin silver-cyan trajectory lines, transparent overlays, no giant eye floating behind him"
+    },
+    "tangWulin": {
+      "role": "canonical lead remains visually and narratively central",
+      "build": "youthful, athletic but not bulky",
+      "hair": "black, soft layered shape",
+      "expression": "warm, sincere, stubborn when fighting",
+      "energy": "deep internal gold, dragon pressure implied before fully shown",
+      "rule": "do not make him look older, villainous, or over-armored"
+    },
+    "xieXie": {
+      "build": "slim, quick, agile",
+      "expression": "confident, teasing, alert",
+      "motion": "sharp lateral bursts, low-center-of-gravity attacks",
+      "weapon": "light dragon dagger, clean silhouette",
+      "energy": "light/dark twin-dragon suggestion only when viewed through Heavenly Eye"
+    },
+    "wuChangkong": {
+      "build": "tall, elegant swordsman",
+      "hair": "long blue hair, clean flowing strands",
+      "outfit": "white, minimal, refined",
+      "expression": "cold and controlled",
+      "presence": "temperature drop implied by color and stillness, not excessive aura"
+    }
+  },
+  "cameraRules": {
+    "dialogue": "35-70mm equivalent, eye-level or subtle three-quarter angle",
+    "action": "18-35mm equivalent, dynamic foreshortening, slight dutch tilt permitted",
+    "mystery": "tight eye close-up, shallow depth of field, negative space",
+    "impact": "one dominant focal action per panel; avoid clutter"
+  },
+  "negativePrompt": "photorealistic, 3D render, western superhero comic, thick black outlines, chibi, flat coloring, muddy colors, excessive armor, generic isekai costume, plastic skin, malformed hands, extra fingers, duplicated limbs, inconsistent hairstyle, inconsistent outfit, unreadable text, random symbols, overexposed aura, floating UI HUD"
+}
